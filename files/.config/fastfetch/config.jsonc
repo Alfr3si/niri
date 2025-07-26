@@ -1,0 +1,124 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+//    "color": {"1": "blue", "2": "black"},
+    "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/png/\" -name \"*.png\" | shuf -n 1)",
+//    "source": "$HOME/.config/fastfetch/ascii/rose.txt",
+    "padding": {
+      "top": 2,
+      "right": 5
+    },
+    "height": 18
+  },
+  "display": {
+    "separator": " ▸ " // :
+  },
+"modules": [
+  {
+    "type": "title"
+  },
+"break",
+{
+  "type": "custom",
+  "format": "\u001b[90m┌──────────────────────────────────────────────────────┐"
+},
+{
+  "type": "os",
+  "key": " ",
+  "keycolor": "white"
+},
+{
+  "type": "kernel",
+  "key": " ",
+  "keycolor": "red"
+},
+{
+  "type": "uptime",
+  "key": "󰄉 ",
+  "keycolor": "cyan"
+},
+{
+  "type": "packages",
+  "key": "󰏔 ",
+  "keycolor": "yellow"
+},
+{
+  "type": "custom",
+  "format": "\u001b[90m├───────────────────────────────────────────────────────┤"
+},
+{
+  "type": "memory",
+  "key": " ",
+  "keycolor": "blue"
+},
+{
+  "type": "swap",
+  "key": "󰯍 ",
+  "keycolor": "blue"
+},
+{
+  "type": "cpu",
+  "key": "󰍛 ",
+  "keycolor": "magenta"
+},
+{
+  "type": "gpu",
+  "key": "󰍛 ",
+  "keycolor": "magenta"
+},
+{
+  "key": "/ ",
+  "type": "disk",
+  "folders": "/",
+  "keyColor": "red"
+},
+{
+  "key": " ",
+  "type": "disk",
+  "folders": "/home",
+  "keyColor": "red"
+},
+{
+  "type": "battery",
+  "key": " ",
+  "keycolor": "green"
+},
+{
+  "type": "custom",
+  "format": "\u001b[90m├───────────────────────────────────────────────────────┤"
+},
+{
+  "type": "terminal",
+  "key": " ",
+  "keycolor": "cyan"
+},
+{
+  "type": "de",
+  "key": " ",
+  "keycolor": "green"
+},
+{
+  "type": "shell",
+  "key": " ",
+  "keycolor": "white"
+},
+{
+  "type": "wm",
+  "key": " ",
+  "keycolor": "green"
+},
+{
+  "type": "custom",
+  "format": "\u001b[90m└──────────────────────────────────────────────────────┘"
+},
+{
+  "type": "colors",
+  "paddingLeft": 24,
+  "symbol": "circle",
+  "block": {
+    "width": 10
+  }
+},
+"break",
+]
+}

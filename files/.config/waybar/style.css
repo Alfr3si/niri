@@ -1,0 +1,115 @@
+* {
+  font-size: 15px;
+  font-family: "Noto Sans";
+}
+window#waybar {
+  margin: 0px;
+  padding: 0px;
+  background: #24283b;
+}
+#window,
+#mode,
+#cpu,
+#clock,
+#memory,
+#battery,
+#network,
+#pulseaudio,
+#backlight,
+#temperature,
+#custom-pronostic,
+#custom-updates,
+#language,
+#network,
+#tray {
+  color: #7babbd;
+  padding: 0px 10px 0px 9px;
+  margin: 0 2px;
+  font-weight: bold;
+  font-size: 15px;
+}
+/*colors for the modules*/
+#tray {
+  padding: 0px 5px 0px 0px;
+}
+#network {
+  border-bottom: 2px solid #d195de;
+  color: #d195de;
+}
+#backlight {
+  border-bottom: 2px solid #eaee83;
+  color: #eaee83;
+}
+#cpu {
+  border-bottom: 2px solid #b9e58b;
+  color: #b9e58b;
+}
+#temperature {
+  border-bottom: 2px solid #ef7a94;
+  color: #ef7a94;
+}
+#pulseaudio {
+  border-bottom: 2px solid #ed91d7;
+  color: #ed91d7;
+}
+#memory {
+  border-bottom: 2px solid white;
+  color: white;
+}
+#clock {
+  border-bottom: 2px solid #9fe8ef;
+  color: #9fe8ef;
+}
+#battery {
+  border-bottom: 2px solid #9fe8ef;
+  color: #9fe8ef;
+}
+#custom-pronostic {
+  border-bottom: 2px solid #9fe8ef;
+  color: #9fe8ef;
+}
+#custom-updates {
+  border-bottom: 2px solid #6cabe9;
+  color: #6cabe9;
+}
+#language {
+  border-bottom: 2px solid #a6c7fc;
+  color: #a6c7fc;
+}
+#workspaces {
+  color: #ffffff;
+  margin: 0px;
+  padding: 2px 2px;
+  font-size: 15px;
+  border: 1px solid #616161; /* Borde del botón activo */
+  margin: 3px 3px;
+  border-radius: 20px; /* Bordes redondeados opcionales */
+}
+#workspaces button.active {
+  font-size: 20px;
+  color: #ef7a94;
+  border: 1px solid #757c95; /* Borde del botón activo */
+  padding: 2px 13px 2px 16px;
+  border-radius: 20px; /* Bordes redondeados opcionales */
+  transition: all 0.3s ease-in-out;
+}
+#workspaces button {
+  color: #a6c7fc;
+  font-size: 13px;
+  padding: 0px 7px;
+  min-height: 0;
+  margin: 0px 0px;
+  border-radius: 0px;
+}
+#battery.warning {
+  color: #ebcb8b;
+  background: none;
+}
+#battery.charging {
+  color: #a3be8c;
+  background: none;
+}
+#battery.critical:not(charging) {
+  color: #bf616a;
+  background: none;
+}

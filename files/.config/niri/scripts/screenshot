@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Opciones para Fuzzel
+options="Región → Copiar\nRegión → Guardar\nPantalla → Copiar\nPantalla → Guardar"
+
+choice=$(printf "%b" "$options" | fuzzel --dmenu --prompt="Captura de pantalla: " --lines=4 --width=30)
+
+dir="$HOME/Pictures/Screenshots"
+mkdir -p "$dir"
+timestamp=$(date +%Y-%m-%d_%H-%M-%S)
+
+case "$choice" in
+  *"Región → Copiar"*)
+    if area=$(slurp); then
+      grim -g "$area" - | wl-copy -t image/png
+      notify-send "Screenshot" "Región copiada al portapapeles"
+    fi
+    ;;
+  *"Región → Guardar"*)
+    if area=$(slurp); then
+      grim -g "$area" "$dir/$timestamp.png"
+      notify-send "Screenshot" "Guardada en $dir/$timestamp.png"
+    fi
+    ;;
+  *"Pantalla → Copiar"*)
+    sleep 1
+    grim - | wl-copy -t image/png
+    notify-send "Screenshot" "Pantalla completa copiada"
+    ;;
+  *"Pantalla → Guardar"*)
+    sleep 1
+    grim "$dir/$timestamp.png"
+    notify-send "Screenshot" "Guardada en $dir/$timestamp.png"
+    ;;
+  *)
+    notify-send "Screenshot" "Opción cancelada o inválida"
+    ;;
+esac
